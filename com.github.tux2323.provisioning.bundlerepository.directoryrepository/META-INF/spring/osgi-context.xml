@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd">
+
+	<osgi:list id="bundleRepositoryConsumer" cardinality="0..N" interface="com.github.tux2323.provisioning.bundlerepository.BundleRepositoryConsumer">
+		<osgi:listener ref="consumerManager" bind-method="bind" unbind-method="unbind">
+		</osgi:listener>
+	</osgi:list>
+
+</beans>

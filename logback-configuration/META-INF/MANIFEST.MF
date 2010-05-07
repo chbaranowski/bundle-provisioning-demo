@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Logback Configuration
+Bundle-SymbolicName: logback_configuration
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: ch.qos.logback.classic;bundle-version="0.9.20"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

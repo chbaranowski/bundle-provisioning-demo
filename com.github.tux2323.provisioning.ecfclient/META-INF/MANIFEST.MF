@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecfclient
+Bundle-SymbolicName: com.github.tux2323.provisioning.ecfclient
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.eclipse.core.runtime;version="3.4.0",
+ org.eclipse.ecf.core;version="3.0.0",
+ org.eclipse.ecf.core.identity;version="3.0.0",
+ org.eclipse.ecf.remoteservice,
+ org.eclipse.ecf.remoteservice.events,
+ org.slf4j;version="1.5.11"

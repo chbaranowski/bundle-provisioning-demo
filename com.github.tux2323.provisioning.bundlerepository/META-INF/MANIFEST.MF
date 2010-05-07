@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Bundle Repository
+Bundle-SymbolicName: com.github.tux2323.provisioning.bundlerepository
+Bundle-Version: 1.0.0
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: com.github.tux2323.provisioning.bundlerepository

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+		
+	<bean id="directoryBundleRepository" class="com.github.tux2323.provisioning.directoryrepository.DirectoryBundleRepository" init-method="start">
+		<property name="bundleDirectory" value="/Users/developer/Develop/workspace/bundle-provisioning-demo/bundle-repository" />
+		<property name="consumerManager" ref="consumerManager"></property>
+	</bean>
+
+	<bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay" value="1000" />
+		<property name="period" value="1000" />
+		<property name="timerTask" ref="directoryBundleRepository" />
+	</bean>
+
+	<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref bean="scheduledTask" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="consumerManager" class="com.github.tux2323.provisioning.directoryrepository.ConsumerManager">
+		<property name="directoryBundleRepository" ref="directoryBundleRepository"/>
+	</bean>
+
+</beans>

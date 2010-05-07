@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Internal
+Bundle-SymbolicName: com.github.tux2323.provisioning.directoryrepository
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.github.tux2323.provisioning.bundlerepository,
+ org.eclipse.ecf.core,
+ org.slf4j;version="1.5.11",
+ org.springframework.scheduling;version="2.5.6.SEC01",
+ org.springframework.scheduling.timer;version="2.5.6.SEC01",
+ org.springframework.util;version="2.5.6.SEC01"
