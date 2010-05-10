@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Interface
+Bundle-SymbolicName: com.github.tux2323.osgi.smsservice.interface
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: com.github.tux2323.osgi.smsservice
