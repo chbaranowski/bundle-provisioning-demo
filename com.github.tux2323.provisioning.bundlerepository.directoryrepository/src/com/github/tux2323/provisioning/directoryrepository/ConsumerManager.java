@@ -23,10 +23,7 @@ public class ConsumerManager {
 		consumers.add(consumer);
 		String[] requiredBundels = consumer.getRequiredBundels();
 		for (String symbolicName : requiredBundels) {
-			String bundleLocation = directoryBundleRepository.getBundleLocation(symbolicName);
-			RepositoryBundle repositoryBundle = new RepositoryBundle();
-			repositoryBundle.setLocation(bundleLocation);
-			repositoryBundle.setSymbolicName(symbolicName);
+			RepositoryBundle repositoryBundle = directoryBundleRepository.getRepositoryBundle(symbolicName);
 			consumer.bundleIsAvailable(repositoryBundle);
 		}
 	}
@@ -49,11 +46,7 @@ public class ConsumerManager {
 		for (BundleRepositoryConsumer consumer : consumers) {
 			String[] requiredBundels = consumer.getRequiredBundels();
 			for (String symbolicName : requiredBundels) {
-				String bundleLocation = directoryBundleRepository.getBundleLocation(symbolicName);
-				RepositoryBundle repositoryBundle = new RepositoryBundle();
-				repositoryBundle.setLocation(bundleLocation);
-				repositoryBundle.setSymbolicName(symbolicName);
-				consumer.bundleUpdateIsAvailable(repositoryBundle);
+				consumer.bundleUpdateIsAvailable(bundle);
 			}
 		}
 	}
@@ -63,11 +56,7 @@ public class ConsumerManager {
 		for (BundleRepositoryConsumer consumer : consumers) {
 			String[] requiredBundels = consumer.getRequiredBundels();
 			for (String symbolicName : requiredBundels) {
-				String bundleLocation = directoryBundleRepository.getBundleLocation(symbolicName);
-				RepositoryBundle repositoryBundle = new RepositoryBundle();
-				repositoryBundle.setLocation(bundleLocation);
-				repositoryBundle.setSymbolicName(symbolicName);
-				consumer.bundleIsAvailable(repositoryBundle);
+				consumer.bundleIsAvailable(bundle);
 			}
 		}
 	}

@@ -14,8 +14,7 @@ import org.springframework.util.Assert;
 import com.github.tux2323.provisioning.bundlerepository.BundleRepository;
 import com.github.tux2323.provisioning.bundlerepository.RepositoryBundle;
 
-public class DirectoryBundleRepository extends TimerTask implements
-		BundleRepository {
+public class DirectoryBundleRepository extends TimerTask implements BundleRepository {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(DirectoryBundleRepository.class);
@@ -73,7 +72,7 @@ public class DirectoryBundleRepository extends TimerTask implements
 
 	private RepositoryBundle createRepositoryBundle(File file) {
 		RepositoryBundle repositoryBundle = new RepositoryBundle();
-		repositoryBundle.setLocation(file.getAbsolutePath());
+		repositoryBundle.setLocation("file://" + file.getAbsolutePath());
 		repositoryBundle.setSymbolicName(extractSymbolicName(file));
 		repositoryBundle.setVersion(extractVersion(file));
 		return repositoryBundle;
@@ -109,6 +108,10 @@ public class DirectoryBundleRepository extends TimerTask implements
 		if(bundle != null)
 			return bundle.getLocation();
 		return null;
+	}
+	
+	public RepositoryBundle getRepositoryBundle(String symbolicName){
+		return bundles.get(symbolicName);
 	}
 
 	public void setConsumerManager(ConsumerManager consumerManager) {

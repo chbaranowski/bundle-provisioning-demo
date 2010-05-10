@@ -9,5 +9,7 @@ Import-Package: com.github.tux2323.provisioning.bundlerepository,
  org.eclipse.ecf.core,
  org.eclipse.ecf.core.identity,
  org.eclipse.ecf.core.util,
+ org.osgi.framework;version="1.5.0",
  org.slf4j;version="1.5.11",
+ org.springframework.osgi.context;version="1.2.1",
  org.springframework.util;version="2.5.6.SEC01"
